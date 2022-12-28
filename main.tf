@@ -75,3 +75,11 @@ resource "aws_route_table_association" "private" {
   route_table_id = aws_route_table.private-rt.id
 }
 
+resource "aws_ec2_transit_gateway_vpc_attachment" "tgw-attach" {
+  subnet_ids         = aws_subnet.private.*.id
+  transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+  vpc_id             = var.DEFAULT_VPC_ID
+  tags = {
+    Name = "roboshop-tgw-attach-${var.ENV}"
+  }
+}
