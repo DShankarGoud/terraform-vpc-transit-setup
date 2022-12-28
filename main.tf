@@ -13,7 +13,7 @@ resource "aws_eip" "ngw" {
 
 resource "aws_nat_gateway" "nat-gw" {
   allocation_id = aws_eip.ngw.id
-  subnet_id     = data.aws_subnets.ngw.id[0]
+  subnet_id     = data.aws_subnets.ngw.ids[0]
 
   tags = {
     Name = "NGW"
