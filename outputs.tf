@@ -13,3 +13,7 @@ output "DEFAULT_VPC_RT" {
 output "DEFAULT_VPC_CIDR" {
   value = data.aws_vpc.default.cidr_block
 }
+
+output "DEFAULT_VPC_TRANSIT_GW_ATTACHMENT" {
+  value = aws_ec2_transit_gateway_vpc_attachment.tgw-attach.id
+}
