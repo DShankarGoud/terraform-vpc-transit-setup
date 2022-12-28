@@ -17,3 +17,7 @@ output "DEFAULT_VPC_CIDR" {
 output "DEFAULT_VPC_TRANSIT_GW_ATTACHMENT" {
   value = aws_ec2_transit_gateway_vpc_attachment.tgw-attach.id
 }
+
+output "DEFAULT_VPC_TRANSIT_GW_ROUTE_TABLE" {
+  value = aws_ec2_transit_gateway_route_table.default-vpc.id
+}
